@@ -12,6 +12,7 @@
             [routerLink]="link.url"
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active"
+            (click)="toggleMenu()"
             ariaCurrentWhenActive="page"
             >{{ link.name }}</a
           >

@@ -10,6 +10,7 @@ import { FaqComponent } from './components/faq/faq.component';
 import { EvaluatorsComponent } from './components/evaluators/evaluators.component';
 import { EvaluatorComponent } from './components/evaluator/evaluator.component';
 import { SafePipePipe } from './pipes/safe-pipe.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,10 @@ import { SafePipePipe } from './pipes/safe-pipe.pipe';
     FaqComponent,
     EvaluatorsComponent,
     EvaluatorComponent,
-    SafePipePipe
+    SafePipePipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
