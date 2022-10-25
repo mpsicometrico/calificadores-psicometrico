@@ -8,6 +8,7 @@
   align-items: center;
   z-index: 3;
   justify-content: space-between;
+  background-color: var(--color-background-primary);
   &_logo {
     width: 25px;
     height: 25px;
@@ -31,7 +32,7 @@
       align-items: center;
       height: 100%;
       margin-left: auto;
-      background-color: aquamarine;
+      background-color: var(--color-background-secondary);
       &_list {
         display: flex;
         height: 50%;
@@ -41,10 +42,11 @@
         &_element {
           &_link {
             border: 1px solid transparent;
+            color: var(--color-blue-primary);
             &.active {
-              border: 1px solid black;
+              border: 1px solid var(--color-green-secondary);
               border-radius: 5px;
-              padding: 0.5rem 0.75rem;
+              padding: 1rem 1.5rem;
             }
           }
         }
@@ -63,7 +65,7 @@
         width: 2rem;
         height: 3px;
         border-radius: 1rem;
-        background-color: black;
+        background-color: var(--color-green-primary);
         transition: transform 250ms ease-in-out;
       }
       &::before,

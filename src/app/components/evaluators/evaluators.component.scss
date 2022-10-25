@@ -1,0 +1,15 @@
+.evaluators {
+  &_title {
+  }
+  &_card {
+    &_title {
+      &_link {
+        color: var(--color-green-secondary);
+      }
+    }
+    &_image {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Link } from '@models/index';
-import { HeaderService } from '@services/header.service';
+import { HeaderService } from '@services/index';
 
 @Component({
   selector: 'app-header',

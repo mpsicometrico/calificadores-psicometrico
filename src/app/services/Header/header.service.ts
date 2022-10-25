@@ -16,16 +16,16 @@ export class HeaderService {
         url: '',
       },
       {
-        name: 'Cotizaciones',
-        url: 'quotations',
+        name: 'Calificadores',
+        url: 'evaluators',
       },
       {
         name: 'Preguntas Frecuentes',
         url: 'faq',
       },
       {
-        name: 'Calificadores',
-        url: 'evaluators',
+        name: 'Cotizaciones',
+        url: 'quotations',
       },
     ];
   }

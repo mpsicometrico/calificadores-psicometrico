@@ -1,5 +1,13 @@
 :root {
-  --color-background: aqua;
+  --color-green-primary: #60ffd9;
+  --color-green-secondary: #009076;
+  --color-background-primary: #081426;
+  --color-background-secondary: #0e1b33;
+  --color-blue-primary: #b0cdf1;
+  --color-blue-secondary: #6994c9;
+  --color-grey-primary: #a9a297;
+  --color-border-primary: #1c2a43;
+  --color-border-secondary: #41629b;
 }
 
 * {
@@ -15,8 +23,9 @@ html {
 body {
   width: 100vw;
   height: 100vh;
-  background-color: var(--color-background);
   font-size: 1.6rem;
+  background-color: var(--color-background-primary);
+  color: var(--color-grey-primary);
 }
 
 ul {

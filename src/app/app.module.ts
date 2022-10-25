@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { QuotationsComponent } from './components/quotations/quotations.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { EvaluatorsComponent } from './components/evaluators/evaluators.component';
+import { EvaluatorComponent } from './components/evaluator/evaluator.component';
+import { SafePipePipe } from './pipes/safe-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { EvaluatorsComponent } from './components/evaluators/evaluators.componen
     HomeComponent,
     QuotationsComponent,
     FaqComponent,
-    EvaluatorsComponent
+    EvaluatorsComponent,
+    EvaluatorComponent,
+    SafePipePipe
   ],
   imports: [
     BrowserModule,
