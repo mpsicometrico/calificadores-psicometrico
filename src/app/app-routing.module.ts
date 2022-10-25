@@ -9,13 +9,20 @@ import {
 } from '@components/index';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', title: 'Inicio', component: HomeComponent },
   {
     path: 'evaluators',
-    component: EvaluatorsComponent,
-    children: [{ path: 'wisc', component: EvaluatorComponent }],
+    title: 'Calificadores',
+    children: [
+      { path: '', component: EvaluatorsComponent },
+      {
+        path: ':name',
+        title: 'Calificador Wisc',
+        component: EvaluatorComponent,
+      },
+    ],
   },
-  { path: 'faq', component: FaqComponent },
+  { path: 'faq', title: 'Preguntas Frecuentes', component: FaqComponent },
   { path: 'quotations', component: QuotationsComponent },
 ];
 

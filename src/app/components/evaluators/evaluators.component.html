@@ -1,18 +1,11 @@
-<!-- <iframe
-  *ngFor="let evaluator of evaluators"
-  width="800"
-  height="700"
-  frameborder="0"
-  scrolling="no"
-  [src]="evaluator.src | safePipe"
-></iframe> -->
 <section class="evaluators">
   <h1 class="evaluatos_title">Calificadores</h1>
   <article class="evaluators_card" *ngFor="let evaluator of evaluators">
     <h2 class="evaluators_card_title">
-      <a class="evaluators_card_title_link">{{ evaluator.name }}</a>
+      <a class="evaluators_card_title_link" [routerLink]="evaluator.url">{{
+        evaluator.name
+      }}</a>
     </h2>
     <img [src]="evaluator.img" alt="" class="evaluators_card_image" />
   </article>
 </section>
-<router-outlet></router-outlet>
