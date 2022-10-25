@@ -15,7 +15,7 @@ export class EvaluatorsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onLoad(event: any) {
-    console.log(event);
+  handleEvaluator(index: number): void {
+    this.evaluatorsService.setIndex(index);
   }
 }

@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { EvaluatorLink } from '@models/index';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EvaluatorsService {
   private evaluatorsLinks: EvaluatorLink[] = [];
+  private evaluatorIndex = new BehaviorSubject<number>(-1);
+  evaluatorIndex$ = this.evaluatorIndex.asObservable();
+
   constructor() {
     this.evaluatorsLinks = [
       {
@@ -19,5 +23,9 @@ export class EvaluatorsService {
 
   getLinks(): EvaluatorLink[] {
     return this.evaluatorsLinks;
+  }
+
+  setIndex(index: number): void {
+    this.evaluatorIndex.next(index);
   }
 }

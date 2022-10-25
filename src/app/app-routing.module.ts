@@ -17,7 +17,7 @@ const routes: Routes = [
       { path: '', component: EvaluatorsComponent },
       {
         path: ':name',
-        title: 'Calificador Wisc',
+        title: 'Calificador',
         component: EvaluatorComponent,
       },
     ],

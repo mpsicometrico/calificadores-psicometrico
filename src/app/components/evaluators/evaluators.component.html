@@ -1,10 +1,16 @@
 <section class="evaluators">
   <h1 class="evaluatos_title">Calificadores</h1>
-  <article class="evaluators_card" *ngFor="let evaluator of evaluators">
+  <article
+    class="evaluators_card"
+    *ngFor="let evaluator of evaluators; index as i"
+  >
     <h2 class="evaluators_card_title">
-      <a class="evaluators_card_title_link" [routerLink]="evaluator.url">{{
-        evaluator.name
-      }}</a>
+      <a
+        class="evaluators_card_title_link"
+        [routerLink]="evaluator.url"
+        (click)="handleEvaluator(i)"
+        >{{ evaluator.name }}</a
+      >
     </h2>
     <img [src]="evaluator.img" alt="" class="evaluators_card_image" />
   </article>

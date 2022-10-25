@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EvaluatorLink } from '@models/index';
+import { EvaluatorsService } from '@services/index';
 
 @Component({
   selector: 'app-evaluator',
@@ -7,8 +8,13 @@ import { EvaluatorLink } from '@models/index';
   styleUrls: ['./evaluator.component.scss'],
 })
 export class EvaluatorComponent implements OnInit {
-  @Input() element!: EvaluatorLink;
-  constructor() {}
+  element!: EvaluatorLink;
+  constructor(private evaluatorsService: EvaluatorsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.evaluatorsService.evaluatorIndex$.subscribe((index) => {
+      console.log(index);
+      this.element = this.evaluatorsService.getLinks()[index];
+    });
+  }
 }
