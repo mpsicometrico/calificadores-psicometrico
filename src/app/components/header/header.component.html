@@ -14,6 +14,7 @@
           <a
             class="header_aside_nav_list_element_link"
             [routerLink]="link.url"
+            [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             >{{ link.name }}</a
