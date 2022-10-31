@@ -9,7 +9,6 @@ import { QuotationsComponent } from './components/quotations/quotations.componen
 import { FaqComponent } from './components/faq/faq.component';
 import { EvaluatorsComponent } from './components/evaluators/evaluators.component';
 import { EvaluatorComponent } from './components/evaluator/evaluator.component';
-import { SafePipePipe } from './pipes/safe-pipe.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FaqComponent,
     EvaluatorsComponent,
     EvaluatorComponent,
-    SafePipePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

@@ -1,6 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
 import { EvaluatorLink } from '@models/index';
 import { EvaluatorsService } from '@services/index';
+import { ActivatedRoute } from '@angular/router';
+import {
+  DomSanitizer,
+  SafeResourceUrl,
+  SafeUrl,
+} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-evaluator',
@@ -9,12 +15,28 @@ import { EvaluatorsService } from '@services/index';
 })
 export class EvaluatorComponent implements OnInit {
   element!: EvaluatorLink;
-  constructor(private evaluatorsService: EvaluatorsService) {}
+  constructor(
+    private evaluatorsService: EvaluatorsService,
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer
+  ) {}
 
   ngOnInit(): void {
-    this.evaluatorsService.evaluatorIndex$.subscribe((index) => {
-      console.log(index);
-      this.element = this.evaluatorsService.getLinks()[index];
+    let element: EvaluatorLink = {
+      src: '',
+      name: '',
+      img: '',
+      url: '',
+      sanitizedSrc: '',
+    };
+    this.route.params.subscribe((params) => {
+      this.element =
+        this.evaluatorsService.getLinks().find((el) => {
+          return el.url === params['name'];
+        }) ?? element;
     });
+    this.element.sanitizedSrc = this.sanitizer.bypassSecurityTrustResourceUrl(
+      this.element.src
+    );
   }
 }

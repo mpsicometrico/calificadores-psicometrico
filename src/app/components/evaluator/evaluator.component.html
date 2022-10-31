@@ -1,4 +1,15 @@
 <section class="evaluator">
-  <h2>Calificador indivual</h2>
-  <h2>{{ element.name }}</h2>
+  <div class="evaluator_main-container" *ngIf="element.name; else elseBlock">
+    <h2>{{ element.name }}</h2>
+    <iframe
+      width="288"
+      height="100%"
+      frameborder="0"
+      scrolling="no"
+      [src]="element.sanitizedSrc"
+    ></iframe>
+  </div>
+  <ng-template #elseBlock>
+    <h2>Calificador no encontrado, intente de nuevo en unos momentos...</h2>
+  </ng-template>
 </section>
