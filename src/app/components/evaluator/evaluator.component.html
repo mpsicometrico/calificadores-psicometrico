@@ -2,8 +2,8 @@
   <div class="evaluator_main-container" *ngIf="element.name; else elseBlock">
     <h2>{{ element.name }}</h2>
     <iframe
+      class="evaluator_main-container_iframe"
       width="288"
-      height="100%"
       frameborder="0"
       scrolling="no"
       [src]="element.sanitizedSrc"
